@@ -15,9 +15,9 @@ The package can be installed as:
     ```
 
 ## Use
-  ```user_sent = %{"this": "is", "some": "data", "that": %{"was": 0, "sent": true}}
-  #create a spec for the above data to comply to
-  spec = %{this: [:is], some: :any, that: %{was: &AtomMapper.is_any/1, sent: &is_integer/1}}
-  AtomMapper.map(user_sent, spec)
-  #=> %{this: :is, some: "data", that: %{was: 0}}
-  ```
+    ```user_sent = %{"this": "is", "some": "data", "that": %{"was": 0, "sent": true}}
+    #create a spec for the above data to comply to
+    spec = %{this: [:is], some: :any, that: %{was: &AtomMapper.is_any/1, sent: &is_integer/1}}
+    AtomMapper.map(user_sent, spec)
+    #=> %{this: :is, some: "data", that: %{was: 0}}
+    ```
