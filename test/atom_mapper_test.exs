@@ -7,6 +7,12 @@ defmodule AtomMapperTest do
     assert AtomMapper.is_any("yeah") == "yeah"
   end
 
+  test "to_int" do
+    assert AtomMapper.to_int("3") == 3
+    assert AtomMapper.to_int("ok") == false
+    assert AtomMapper.to_int(3) == 3
+  end
+
   test "map simple map" do
     this = %{"this" => 4, "that" => "yeah", "what" => true}
     that = %{this: 4, that: "yeah", what: true}

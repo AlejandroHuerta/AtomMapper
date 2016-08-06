@@ -2,6 +2,15 @@ defmodule AtomMapper do
 
   def is_any(value), do: value
 
+  def to_int(value) when is_integer(value), do: value
+
+  def to_int(value) when is_bitstring(value) do
+    case Integer.parse(value) do
+      {value, _} -> value
+      :error -> false
+    end
+  end
+
   def map(map, spec = %{}) do
     Enum.reduce Map.to_list(spec), %{}, fn tuple = {atom, _}, acc ->
       case Map.fetch(map, Atom.to_string(atom)) do
