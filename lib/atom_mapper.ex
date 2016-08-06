@@ -1,4 +1,4 @@
-defmodule AtomMapper.AtomMapper do
+defmodule AtomMapper do
 
   def is_any(value), do: value
 

@@ -1,7 +1,5 @@
-defmodule AtomMapper.AtomMapperTest do
+defmodule AtomMapperTest do
   use ExUnit.Case
-
-  alias AtomMapper.AtomMapper
 
   test "is_any" do
     assert AtomMapper.is_any(3) == 3
